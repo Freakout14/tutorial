@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<head>
+
+
+<title> Life in the NYC </title>
+<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+ 	<link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/bluebird" type="text/css"/>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
+h2 {
+	font-family: 'Oswald', sans-serif;
+	color: #FFF;
+	font-size: 45px;
+	text-decoration: underline;
+}
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
+
+* { box-sizing: border-box; }
+#clock{
+  position:relative;
+  display:block;
+  color:#000;
+  font-size:30px;
+  background: rgb(0,0,139);
+  background: rgb(0,0,139) linear-gradient(140deg, rgba(0,0,0,0) 50%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.0) 100%);
+  height: 80%;
+  width:100%;
+  padding:70px;
+  margin:0 auto;
+  transition:background-color 0.5s linear;
+  font-family: 'Josefin Sans', Arial, "Trebuchet MS", sans-serif;
+  color: #FFF;
+  box-shadow: rgba(67, 67, 70, 0.63) 0px 10px 10px;
+}
+#clock:hover {
+	opacity: 0.4;
+	-webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -ms-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#letters, #letters span{
+   display:inline-block;
+   line-height:41px;
+   text-align:center;
+   transition:all 0.5s linear;
+}
+#letters span{
+    width:35px;
+}
+
+
+.light{
+  color:#fff !important;
+  text-shadow: 0px 0px 5px #fff;
+}
+
+#settings, #settings a{
+  color:#555;
+  font-size:13px;
+  width:160px;
+  margin:10px auto;
+}
+
+header {
+	/**font-family: 'Oswald', sans-serif;**/
+	font-size: 30px;
+	padding: 20px;
+	text-transform: uppercase;
+	box-shadow: 30px;
+}
+article {
+	/**font-family: Helvetica;**/
+	font-size: 14px;
+	margin: 0 auto;
+	display: block;
+}
+.block {
+	background: #434644 linear-gradient(140deg, rgba(58, 58, 58, 0) 50%, rgba(241, 241, 241, 0.03) 50%, rgba(255, 255, 255, 0.62) 100%);
+	border-radius: 3px;
+	margin: 0 auto;
+	padding: 10px;
+	color: white;
+	font-family: Arial;
+}
+
+
+
+.logo {
+	margin-top: 35px;
+	padding: 15px;
+}
+ 
+ ul {
+ 	padding: 15px;
+ }
+ li {
+ 	display: inline;
+ 	padding: 0px 15px 0px 15px;
+ 	float: right;
+ 	position: relative;
+ 	top: -75px;
+ 	margin: 0 auto;
+ 	text-transform: uppercase;
+ 	font-family: 'Oswald', sans-serif;
+
+
+   }
+   li:hover {
+   	opacity: 0.6;
+   	color: #F00;
+   }
+   .imgblock {
+   	    border-radius: 3px;
+    padding: 0;
+    height: 300px;
+    width: 400px;
+    border: 3px solid rgba(255, 0, 0, 0.39);
+    opacity: 0.7;
+
+    
+}
+.imgblock:hover {
+	opacity: 1;
+	float: left;
+	
+
+
+}
+
+.tit {
+	font-size: 40px;
+	font-family: 'Oswald', sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: rgba(255, 0, 0, 0.39);
+	padding: 10px
+}
+
+p.con:last-child:after {
+       content: "\2112"; /* Here comes the ivy leaf */
+       font-size: 190%; /* Makes the leaf larger than the normal text */
+       padding-left: 10px; /* Leaf won't clash with the last letter of the text */
+       float: right; /* Horizontal position is set to the right edge of the column */
+       position: relative; /* This is just an homage to Albert Einstein */
+       top: 15px /*Vertical distance from the last line of text */
+}
+
+	
+.clearboth { clear: both; }
+.layered-paper {
+    background: rgba(255, 0, 0, 0.05);
+    margin-left: 10px;
+        padding: 40px;
+        width: 90%;
+        font-family: 'Oswald';
+        color: #FF6666;
+        font-weight: inherit;
+       box-shadow:  0 1px 1px rgba(255, 102, 102, 0.33), /* The top layer shadow */ 
+        0 10px 0 -5px rgba(255, 102, 102, 0.18), /* The second layer */ 
+        0 10px 1px -4px rgba(255, 102, 102, 0.48), /* The second layer shadow */ 
+        0 20px 0 -10px rgba(255, 102, 102, 0.33), /* The third layer */ 
+        0 20px 1px -9px rgba(255, 102, 102, 0.48);
+}
+
+.ribbon {
+ font-size: 16px !important;
+ /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+
+ width: 50%;
+    
+ position: relative;
+ background:  #ff6666;
+ color: #FFF;
+ text-align: center;
+ padding: 1em 2em; /* Adjust to suit */
+ margin: 2em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+ font-family: 'Oswald';
+}
+.ribbon:before, .ribbon:after {
+ content: "";
+ position: absolute;
+ display: block;
+ bottom: -1em;
+ border: 1.5em solid #ff6666;
+ z-index: -1;
+}
+.ribbon:before {
+ left: -2em;
+ border-right-width: 1.5em;
+ border-left-color: transparent;
+}
+.ribbon:after {
+ right: -2em;
+ border-left-width: 1.5em;
+ border-right-color: transparent;
+}
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+ content: "";
+ position: absolute;
+ display: block;
+ border-style: solid;
+ border-color: rgba(41, 37, 37, 0.48) transparent transparent transparent;
+
+ bottom: -1em;
+}
+.ribbon .ribbon-content:before {
+ left: 0;
+ border-width: 1em 0 0 1em;
+}
+.ribbon .ribbon-content:after {
+ right: 0;
+ border-width: 1em 1em 0 0;
+}
+
+@font-face {
+		font-family: 'SequentialistBB';
+		src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/306FA6_1_0.woff2') format('woff2'),
+		url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/306FA6_0_0.woff') format('woff');
+		font-style: normal;
+		font-weight: 400;
+		}
+	@font-face {
+		font-family: 'SequentialistBB';
+		src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/306FA6_0_0.woff2') format('woff2'),
+		url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/306FA6_0_0.woff') format('woff');
+		font-style: italic;
+		font-weight: 400;
+		}
+	
+section {
+  padding: 3rem;
+}
+section:nth-of-type(1) {
+    background: #d52b21;
+}
+section:nth-of-type(2) {
+    background: #fff;
+}
+section:nth-of-type(3) {
+  background: #0388fe;
+}
+blockquote.bubble { 
+	background-position: center;
+  background-repeat: no-repeat !important;
+	background-size: 100% 100%;
+  margin: 0 auto;
+	text-align: center;
+	height: 0;
+	box-sizing: content-box;
+	line-height: 1;
+}
+blockquote.speech {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/speech-bubble.svg); 
+  width: 25%;
+  padding-top: 6%;
+	padding-bottom: 20%;
+
+
+    font-family: SequentialistBB, cursive; 
+    font-size: 2.5vw; 
+    margin: 0;
+
+}
+blockquote.whisper {
+	background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/speech-bubble.svg); 
+  width: 35%;
+  padding-top: 6%;
+	padding-bottom: 20%;
+float: right;
+position: relative;
+top: -350px;
+    font-family: SequentialistBB, cursive; 
+    font-size: 2.8vw; 
+    margin: 0;
+
+}
+
+
+
+
+.block2 {
+
+	 background: #FFBC42 linear-gradient(140deg, rgba(0, 0, 0, 0.13) 50%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.0) 100%);
+	 
+	     height: 70%;
+    width: 100%;
+    padding: 70px;
+    margin: 0 auto;
+    transition: background-color 0.5s linear;
+    font-family: 'Josefin Sans', Arial, "Trebuchet MS", sans-serif;
+    color: #FFF;
+    margin-top: -25px;
+    box-shadow: rgba(67, 67, 70, 0.63) 10px 10px 10px;
+}
+
+h2.non {
+	font-size: 40px;
+	color: #FFF;
+	font-family: 'Oswald', Arial, "Trebuchet MS", sans-serif;
+	
+	text-decoration: none;
+}
+button.food {
+
+	    padding: 20px;
+    font-family: Arial;
+    margin: 5px;
+    background: rgb(255, 189, 70);
+border:2px solid #ffbc42;    color: #FFF;
+cursor: pointer;
+width: 200px;
+    height: 100px;
+    -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+    font-weight: bold;
+}
+
+button.food:hover {
+	opacity: 0.7;
+	
+        width: 300px;
+
+	
+}
+
+body {
+	background-image: url('file:///Users/Freakout/Downloads/sativa/sativa.png');
+	max-width: 100%;
+}
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+<div id="gradient" />
+
+<header class="logo">Welcome to the NYC Blog.</header>
+<ul>
+<li> About Us </li>
+<li> Contribute </li>
+<li> Where to find us? </li>
+<li> Why we do this </li>
+<li> Visit NYC </li>
+<li> Hire us</li>
+</ul>
+<br>
+<article><div class="block"><p class="none">We are a blog that will keep you upto date with every happening in the New York City. Our experts and friendly and are present at every corner in NYC. You're free to donate or even contribute to the blog. You can use the contribute page and submit your article or piece of a poetry.</p></article></div>
+<br>
+
+
+<!--<img class="imgblock" src="http://i.imgur.com/vNU73rw.jpg"> -->
+<h2 class="tit"> What is the NYC Blog? </h2>
+<br>
+<div class="layered-paper">
+    <article>
+    <p class="con">
+    When we first started this blog we had no intention of going public or whatsoever. We started making huge profits and tarted to actually make a difference in the communinty. That was the time when I realised that we are doing something which is benefitting this world. We were helping new tourists in NYC. We showed them around for free. All we wanted was more traffic on our web. We were like a helping hand to every one in need. We are proud of what we have done and in the way we have contributed to the NYC. If you would like us to continue we suggest you promote our services to more and more, We feed on popularity, We were the first one to come up with this idea. This is our idea of startup. Our way to earn. Our way to help. We the NYC Blog. </p></article>
+</div>
+<br>
+<h1 class="ribbon">
+   <strong class="ribbon-content">How can you help?</strong>
+</h1>
+
+
+<br>
+<div id="clock">
+    <p> Help us by promoting our services to all your friends and family. AWhen we first started this blog we had no intention of going public or whatsoever. We started making huge profits and tarted to actually make a difference in the communinty. That was the time when I realised that we are doing something which is benefitting this world. We were helping new tourists in NYC. We showed them around for free. All we wanted was more traffic on our web. We were like a helping hand to every one in need. We are proud of what we have done and in the way we have contributed to the NYC. If you would like us to continue we suggest you promote our services to more and more, We feed on popularity, We were the first one to come up with this idea. This is our idea of startup. Our way to earn. Our way to help. We the NYC Blog. 
+    </div>
+</div>
+</p></div></article></div>
+
+<br>
+<!--<section>
+  <blockquote class="speech bubble">Need Help? <em><br>NYC Blog?</em></blockquote> 
+   <blockquote class="speech whisper">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We are always here <em><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Free & non-profit</em></blockquote> 
+// COMIC STYLE BUBBLES. NOT FIXED YET. 
+</section> -->
+
+
+<div class="block2">
+	
+	<h2 class="non"> FOOD IN NYC</h2> 
+	<article></article>
+	<p> Food in New York City is faboulous. It gets better and better. NYC hosts a wide range of local aswell as Internation Cuisines. Food in NYC is just there everywhere. Whereever you go you can get Pizza or even a bacon. If you are a foodie you'll love NYC. Nightclubs, bars, Pizza, Fast food, McDonalds in every other corner and also 5 star internation restaurants. NYC also has some of the best Sushi in the world. If you're interested in knowing more about NYC food life please click on the button </p></article>
+	<button class="food"> Learn More</button>
+</div>
+<br>
+
+<h2 class="non"> TEST </h2>
+
+
+</body>
